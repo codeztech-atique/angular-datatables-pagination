@@ -1,0 +1,60 @@
+<h1 style="text-align:center">DataTable View</h1>
+<!-- <h4 style="color:red;text-align:center">Please select the giving restaurant CSV file in order to load the data</h4>
+<input type="file" accept=".csv" style="text-align:center" (change)="handleFileSelect($event)"> -->
+<hr>
+<table datatable [dtOptions]="dtOptions" class="display" style="width:100%">
+	<thead>
+		<tr>
+			<!-- <th *ngFor="let item of dataTableHeader">
+			  {{item}}
+      </th> -->
+			<th>Restaurant ID</th>
+			<th>Restaurant Name</th>
+			<th>Cuisines</th>
+			<th>Average Cost for two</th>
+			<th>Currency</th>
+			<th>Has Table booking</th>
+			<th>Has Online delivery</th>
+			<th>Aggregate rating</th>
+			<th>Rating color</th>
+			<th>Rating text</th>
+			<th>Votes</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let key of tableData">
+			<td>{{key.restaurantID}}</td>
+			<td>{{key.restaurantName}}</td>
+			<td>{{key.cuisines}}</td>
+			<td>{{key.averageCostfortwo}}</td>
+			<td>{{key.currency}}</td>
+			<td>{{key.hasTablebooking}}</td>
+			<td>{{key.hasOnlinedelivery}}</td>
+			<td>{{key.aggregaterating}}</td>
+			<td>{{key.ratingcolor}}</td>
+			<td>{{key.ratingtext}}</td>
+			<td>{{key.votes}}</td>
+		</tr>
+		<tr *ngIf="tableData?.length == 0">
+			<td colspan="3" class="no-data-available">No data!</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<!-- <th *ngFor="let item of dataTableHeader">
+			  {{item}}
+      </th> -->
+			<th>Restaurant ID</th>
+			<th>Restaurant Name</th>
+			<th>Cuisines</th>
+			<th>Average Cost for two</th>
+			<th>Currency</th>
+			<th>Has Table booking</th>
+			<th>Has Online delivery</th>
+			<th>Aggregate rating</th>
+			<th>Rating color</th>
+			<th>Rating text</th>
+			<th>Votes</th>
+		</tr>
+	</tfoot>
+</table>
